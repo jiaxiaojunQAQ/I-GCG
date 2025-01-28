@@ -4,7 +4,9 @@ The official repository for [Improved Techniques for Optimization-Based Jailbrea
 Please feel free to contact jiaxiaojunqaq@gmail.com if you have any question.
 
 
+## News
 
+`2025/01` 🎊 I-GCG is accepted by ICLR 2025!
 
 
 ## Quick Start 
