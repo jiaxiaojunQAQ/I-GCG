@@ -1,5 +1,6 @@
 # I-GCG
-The official repository for [Improved Techniques for Optimization-Based Jailbreaking on Large Language Models](https://arxiv.org/abs/2405.21018).  
+📢 **Update (April 2025):** Our paper has been **accepted to ICLR 2025**! 🎉  
+Check out the paper: [Improved Techniques for Optimization-Based Jailbreaking on Large Language Models](https://arxiv.org/abs/2405.21018)
 
 Please feel free to contact jiaxiaojunqaq@gmail.com if you have any question.
 
