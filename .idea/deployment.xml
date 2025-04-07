@@ -282,6 +282,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="jxj@csl-server8.dynip.ntu.edu.sg:32943 password (15)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="jxj@csl-server8.dynip.ntu.edu.sg:32943 password (2)">
         <serverdata>
           <mappings>
@@ -423,6 +430,13 @@
         </serverdata>
       </paths>
       <paths name="sysu@106.54.213.180:7802 password">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="sysu@106.54.213.180:7802 password (2)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
