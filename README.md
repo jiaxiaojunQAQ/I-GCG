@@ -1,5 +1,6 @@
 # I-GCG
-The official repository for [Improved Techniques for Optimization-Based Jailbreaking on Large Language Models](https://arxiv.org/abs/2405.21018).  
+📢 **Update (April 2025):** Our paper has been **accepted to ICLR 2025**! 🎉  
+Check out the paper: [Improved Techniques for Optimization-Based Jailbreaking on Large Language Models](https://arxiv.org/abs/2405.21018)
 
 Please feel free to contact jiaxiaojunqaq@gmail.com if you have any question.
 
@@ -12,7 +13,7 @@ Please feel free to contact jiaxiaojunqaq@gmail.com if you have any question.
 ## Quick Start 
 ### 1. Generate suffix initialization
 ```python
-python attack_llm_core_best_update_our_target.py ----behaviors_config=behaviors_ours_config.json
+python attack_llm_core_best_update_our_target.py --behaviors_config=behaviors_ours_config.json
 ```
 
 ### 2. Generate new json with the initialization
@@ -22,21 +23,21 @@ python generate_our_config.py
 
 ### 3. Conduct jailbreaking attack
 ```python
-python run_multiple_attack_our_target.py --behaviors_config==behaviors_ours_config_init.json
+python run_multiple_attack_our_target.py --behaviors_config=behaviors_ours_config_init.json
 ```
 
 ## Experiments
 
 ### Comparison results with SOTA jailbreak methods
 
-<p align="left">
-    <img src="./imgs/results.png" width=100%\>
+<p align="center">
+    <img src="./imgs/results.png" width=80%\>
 </p>
 
 ### Transferable performance of jailbreak suffix
 
-<p align="left">
-    <img src="./imgs/transfer.png" width=100%\>
+<p align="center">
+    <img src="./imgs/transfer.png" width=80%\>
 </p>
 
 

@@ -93,6 +93,23 @@ def sample_control(control_toks, grad, batch_size, topk=256, temp=1, not_allowed
     return new_control_toks
 
 
+# def get_filtered_cands(tokenizer, control_cand, filter_cand=True, curr_control=None):
+#     cands, count = [], 0
+#     for i in range(control_cand.shape[0]):
+#         decoded_str = tokenizer.decode(control_cand[i], skip_special_tokens=True)
+#         if filter_cand:
+#             if decoded_str != curr_control and len(tokenizer(decoded_str, add_special_tokens=False).input_ids) == len(control_cand[i]):
+#                 cands.append(decoded_str)
+#             else:
+#                 count += 1
+#         else:
+#             cands.append(decoded_str)
+#
+#     if filter_cand:
+#         cands = cands + [cands[-1]] * (len(control_cand) - len(cands))
+#         # print(f"Warning: {round(count / len(control_cand), 2)} control candidates were not valid")
+#     return cands
+
 def get_filtered_cands(tokenizer, control_cand, filter_cand=True, curr_control=None):
     cands, count = [], 0
     for i in range(control_cand.shape[0]):
@@ -104,11 +121,23 @@ def get_filtered_cands(tokenizer, control_cand, filter_cand=True, curr_control=N
                 count += 1
         else:
             cands.append(decoded_str)
-
     if filter_cand:
+        if not cands:
+            cands = []
+            for i in range(control_cand.shape[0]):
+                decoded_str = tokenizer.decode(control_cand[i], skip_special_tokens=True)
+                encoded = tokenizer(decoded_str, add_special_tokens=False).input_ids
+                if len(encoded) > len(control_cand[i]):
+                    encoded = encoded[:len(control_cand[i])]
+                else:
+                    encoded = encoded + [random.randrange(1_000, 30_000) for _ in
+                                         range(len(control_cand[i]) - len(encoded))]
+                decoded_str = tokenizer.decode(encoded, skip_special_tokens=True)
+                cands.append(decoded_str)
         cands = cands + [cands[-1]] * (len(control_cand) - len(cands))
-        # print(f"Warning: {round(count / len(control_cand), 2)} control candidates were not valid")
+
     return cands
+
 
 
 def get_logits(*, model, tokenizer, input_ids, control_slice, test_controls=None, return_ids=False, batch_size=512):
